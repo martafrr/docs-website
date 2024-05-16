@@ -17,3 +17,8 @@ For queries using `TIMESERIES`, the size of the `TIMESERIES` bucket is used as t
 
 * `SELECT count(*) FROM PageView TIMESERIES 5 minutes` would refresh every 5 minutes.
 * `SELECT count(*) FROM PageView TIMESERIES 1 hour SINCE 1 day ago` would refresh every hour.
+
+In a dashboard, a chart can be configured to have a custom refresh rate. Using the new "query your data" experience, the refresh rate can be configured to either be:
+* disabled,
+* a value between 5 seconds and 24 hours,
+* or 'auto'. When 'auto' is selected, the refresh rate is determined by the query's timeframe divided by 60 or the TIMESERIES bucket size as explained above.
